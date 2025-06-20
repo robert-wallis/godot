@@ -91,6 +91,9 @@ def configure(env: "SConsEnvironment"):
     env.Append(CCFLAGS=["-ffp-contract=off"])
     env.Append(CCFLAGS=["-fobjc-arc"])
 
+    env.Append(CCFLAGS=["-Wno-error=c99-designator"])
+    env.Append(CXXFLAGS=["-Wno-error=c99-designator"])
+
     cc_version = get_compiler_version(env)
     cc_version_major = cc_version["apple_major"]
     cc_version_minor = cc_version["apple_minor"]
